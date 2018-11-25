@@ -1,34 +1,39 @@
-
-
 <div class="parallax">
   <div class="container">
     <div class="row">
       <div class="col-6 offset-3 ra">
         <p>Tell Ra How You Feel Today</p>
       </div>
-      </div>
-<div class="row">
-  <div class="col-12 text-center">
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
 
- 
-    <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" class="mybutton">
-                Tell Ra How You Feel
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" onclick="location.href = '/user'">Headaches or migraines, the feeling of pressure in your head</a>
-                <a class="dropdown-item" onclick="location.href = '/user'">Lethargy, exhaustion</a>
-                <a class="dropdown-item" onclick="location.href = '/user'">Hyper-tension (high blood pressure)</a>
-                <a class="dropdown-item" onclick="location.href = '/user'">Dizziness, the jitters or vertigo</a>
-                <a class="dropdown-item" onclick="location.href = '/user'">Sleep Issues</a>
-                <a class="dropdown-item" onclick="location.href = '/user'">Anxiety and worrying</a>
-                <a class="dropdown-item" onclick="location.href = '/user'">Increased sensitivity</a>
-              </div>
-            </div>
-             </div>
-</div>
-    
+
+        {{!-- <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" class="mybutton">
+            Tell Ra How You Feel
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" value="Headaches">Headaches or migraines, the feeling of pressure in your head</a>
+            <a class="dropdown-item" onclick="location.href = '/user'">Lethargy, exhaustion</a>
+            <a class="dropdown-item" onclick="location.href = '/user'">Hyper-tension (high blood pressure)</a>
+            <a class="dropdown-item" onclick="location.href = '/user'">Dizziness, the jitters or vertigo</a>
+            <a class="dropdown-item" onclick="location.href = '/user'">Sleep Issues</a>
+            <a class="dropdown-item" onclick="location.href = '/user'">Anxiety and worrying</a>
+            <a class="dropdown-item" onclick="location.href = '/user'">Increased sensitivity</a>
+          </div>
+        </div> --}}
+
+        <select class="form-control" id="option1" >
+          <option>Tell Ra How You Feel</option>
+          <option >roma</option>
+          <option>totti</option>
+        </select>
+
+      </div>
+    </div>
+
 
   </div>
 
@@ -37,7 +42,7 @@
   <div class="container">
     <div class="abouttxt">
       <div class="headers">
-      
+
         <br>
         <br>
         <div class="row">
@@ -50,7 +55,7 @@
             <p>
               Discover the connection between how you feel and cosmic events. Tell us how you are feeling, or sign in
               to keep track of your own data.</p>
-        
+
           </div>
 
 
@@ -67,3 +72,14 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+
+<script>
+  //var $exampleText = $("#option1");
+ var exampleText = $('#aioConceptName').find(":selected").text();
+  console.log(exampleText);
+
+/*$('select').on('change', function() {
+  alert( this.value );
+}); */
+
+</script>

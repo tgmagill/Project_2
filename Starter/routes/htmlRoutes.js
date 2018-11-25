@@ -19,6 +19,13 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/signup", function(req, res) {
+    db.Example.findOne({}).then(function(dbExample) {
+      res.render("signup", {
+        example: dbExample
+      });
+    });
+  });
 
     // Load example page and pass in an example by id
     app.get("/user", function(req, res) {

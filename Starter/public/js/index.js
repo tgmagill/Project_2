@@ -1,5 +1,5 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
+var $exampleText = $("#option1");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -21,6 +21,7 @@ var API = {
       url: "api/examples",
       type: "GET"
     });
+
   },
   deleteExample: function(id) {
     return $.ajax({
@@ -33,6 +34,7 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
+    console.log(data);
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
@@ -51,7 +53,9 @@ var refreshExamples = function() {
 
       $li.append($button);
 
+     // console.log($li);
       return $li;
+      
     });
 
     $exampleList.empty();
@@ -66,13 +70,13 @@ var handleFormSubmit = function(event) {
 
   var example = {
     text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    //description: $exampleDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  // if (!(example.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
 
   API.saveExample(example).then(function() {
     refreshExamples();
@@ -95,6 +99,7 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+//$submitBtn.on("click", handleFormSubmit);
+$('select').on('change',handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 

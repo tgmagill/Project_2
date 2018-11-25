@@ -26,7 +26,7 @@ function router(nav) {
           debug(results);
           //here we could do req.logout to sign out.
           req.login(results.ops[0], () => {
-            res.redirect('/auth/profile');
+            res.redirect('/user');
           });
         } catch (err) {
           debug(err);
@@ -44,10 +44,10 @@ function router(nav) {
     //this is the line where passport deals with our auth. 
     //in this case we are using the "local" strat as apposed to google or fb
     .post(passport.authenticate('local', {
-      successRedirect: '/auth/profile',
-      failureRedirect: '/'
+      successRedirect: '/user',
+      failureRedirect: '/404'
     }));
-  authRouter.route('/profile')
+  authRouter.route('/user')
   //this .all is how to protect the profile. 
   //if we get a user back call next if not redirect. 
     .all((req, res, next) => {
