@@ -6,7 +6,7 @@
 // let eMonth = dateObj.getUTCMonth() + 1; //months from 1-12
 // let eDay = dateObj.getUTCDate();
 // let eYear = dateObj.getUTCFullYear();
-// let key = "eS6qfDZDKtwmh83Q5oGPjIyiUL3so4NOGVV2ixSH";
+// let key = process.env.nasaKey;
 // const solarSearch = "https://api.nasa.gov/DONKI/FLR?startDate=" + sYear + '-' + sMonth + '-' + sDay + "&endDate=" + eYear + '-' + eMonth + '-' + eDay + "&api_key=" + key;
 
 
@@ -17,6 +17,7 @@ const cron = require('node-cron');
 const express = require('express');
 let app = express();
 let fs = require('fs');
+
 
 // Connection to database
 let mysql = require('mysql');
