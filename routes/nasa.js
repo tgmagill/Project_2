@@ -1,13 +1,13 @@
 // Global variables
-// let sYear = "2018";
-// let sMonth = "01";
-// let sDay = "01";
-// let dateObj = new Date();
-// let eMonth = dateObj.getUTCMonth() + 1; //months from 1-12
-// let eDay = dateObj.getUTCDate();
-// let eYear = dateObj.getUTCFullYear();
-// let key = "eS6qfDZDKtwmh83Q5oGPjIyiUL3so4NOGVV2ixSH";
-// const solarSearch = "https://api.nasa.gov/DONKI/FLR?startDate=" + sYear + '-' + sMonth + '-' + sDay + "&endDate=" + eYear + '-' + eMonth + '-' + eDay + "&api_key=" + key;
+let sYear = "2018";
+let sMonth = "01";
+let sDay = "01";
+let dateObj = new Date();
+let eMonth = dateObj.getUTCMonth() + 1; //months from 1-12
+let eDay = dateObj.getUTCDate();
+let eYear = dateObj.getUTCFullYear();
+let key = "eS6qfDZDKtwmh83Q5oGPjIyiUL3so4NOGVV2ixSH";
+const solarSearch = "https://api.nasa.gov/DONKI/FLR?startDate=" + sYear + '-' + sMonth + '-' + sDay + "&endDate=" + eYear + '-' + eMonth + '-' + eDay + "&api_key=" + key;
 
 
 
@@ -45,7 +45,7 @@ nasaSearch = function () {
       return console.log(err);
     }
     var content = JSON.stringify(body);
-    fs.writeFile("/JSON_data/nasa.json", content, function (err) {
+    fs.writeFile("../models/JSON_data/nasa.json", content, function (err) {
       if (err) {
         console.log(err);
       }
@@ -77,11 +77,11 @@ $.get(solarSearch, function(data){
 });
 
 // Console log for checking api data
-console.log(
- body[index].beginTime,
-  body[index].endTime,
-  body[index].peakTime,
-   body[index].classType);
+//console.log(
+ //body[index].beginTime,
+ // body[index].endTime,
+ // body[index].peakTime,
+ // body[index].classType);
 
 
 
