@@ -1,6 +1,4 @@
 // Global variables
-
-
 let sYear = "2018";
 let sMonth = "01";
 let sDay = "01";
@@ -45,7 +43,7 @@ navySearch = function () {
     }
     console.log(body)
     var content = JSON.stringify(body);
-    fs.writeFile("navy.json", content, function (err) {
+    fs.writeFile("../models/JSON_data/navy.json", content, function (err) {
       if (err) {
         console.log(err);
       }
